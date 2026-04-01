@@ -41,13 +41,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-forest-900 rounded-xl flex items-center justify-center text-xl shadow-sm group-hover:scale-105 transition-transform">
+          <Link to="/" className="flex items-center gap-1 group">
+            <div className="w-9 h-9 bg-forest-900 rounded-xl flex items-center justify-center text-xl shadow-sm group-hover:scale-105 transition-transform">
               🦋
             </div>
             <div className="leading-tight">
-              <p className="font-serif font-bold text-forest-900 text-base leading-none">ICISZ 2026</p>
-              <p className="font-sans text-[10px] text-gray-500 tracking-wide uppercase">Entomology Conference</p>
+              <p className="font-serif font-bold text-forest-900 text-sm leading-none">Entomology</p>
+              <p className="font-sans text-[10px] text-gray-500 tracking-wide uppercase">Conference </p>
             </div>
           </Link>
 
