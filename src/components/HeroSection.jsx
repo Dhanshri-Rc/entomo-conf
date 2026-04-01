@@ -57,7 +57,7 @@ export default function HeroSection() {
           >
             International{' '}
             <span className="text-forest-900 italic">Conference</span>
-            {' '}on Entomology &amp;{' '}
+            {' '}on Entomology 
             <span className="relative inline-block">
             
               {/* Underline decoration */}
