@@ -34,7 +34,7 @@ export default function HeroSection() {
       <FloatingInsect emoji="🪲" className="top-[20%] left-[20%]"  delay={3}   />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-24 lg:py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-20 lg:py-32">
         <div className="max-w-3xl">
 
           {/* Badge */}

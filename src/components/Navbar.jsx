@@ -40,11 +40,10 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-      <img className='h-24 w-36' src={logo} alt="Entomology Conference Logo" />
+          <Link to="/">
+            <img className='h-24 w-36' src={logo} alt="Entomology Conference Logo" />
+          </Link>
 
-
-
-      
           {/* Logo */}
           {/* <Link to="/" className="flex items-center gap-1 group">
             <div className="w-9 h-9 bg-forest-900 rounded-xl flex items-center justify-center text-xl shadow-sm group-hover:scale-105 transition-transform">

@@ -66,7 +66,7 @@ function CallForPapers() {
             </p>
             <ul className="space-y-2 mb-7">
               {[
-                'Full papers: up to 8 pages (IEEE format)',
+                'Full papers: up to 8 pages',
                 'Short papers / work-in-progress: up to 4 pages',
                 'Poster abstracts: up to 500 words',
                 'Double-blind peer review process',
