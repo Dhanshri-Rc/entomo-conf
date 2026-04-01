@@ -119,7 +119,7 @@ function FeaturedSpeakers() {
           </div>
         </SectionReveal>
 
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-6">
           {keynotes.map((s, i) => <SpeakerCard key={s.id} speaker={s} index={i} />)}
         </div>
       </div>

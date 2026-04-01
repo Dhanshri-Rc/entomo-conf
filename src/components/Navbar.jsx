@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import logo from '../assets/ento_logo.png'
 
 const navLinks = [
   { to: '/',             label: 'Home'       },
@@ -39,9 +40,9 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-
+      <img className='h-24 w-36' src={logo} alt="Entomology Conference Logo" />
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-1 group">
+          {/* <Link to="/" className="flex items-center gap-1 group">
             <div className="w-9 h-9 bg-forest-900 rounded-xl flex items-center justify-center text-xl shadow-sm group-hover:scale-105 transition-transform">
               🦋
             </div>
@@ -49,7 +50,7 @@ export default function Navbar() {
               <p className="font-serif font-bold text-forest-900 text-sm leading-none">Entomology</p>
               <p className="font-sans text-[10px] text-gray-500 tracking-wide uppercase">Conference </p>
             </div>
-          </Link>
+          </Link> */}
 
           {/* Desktop nav */}
           <ul className="hidden lg:flex items-center gap-1">
