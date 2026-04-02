@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import logo from '../assets/ento_logo.png'
 
 const navLinks = [
-  { to: '/',             label: 'Home'       },
+  // { to: '/',             label: 'Home'       },
   { to: '/about',        label: 'About'      },
   { to: '/topics',       label: 'Topics'     },
   { to: '/speakers',     label: 'Speakers'   },
@@ -34,14 +34,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md shadow-green-900/10'
+          ? 'bg-white/95 backdrop-blur-md shadow-md shadow-green-900/10 border-b border-green-500'
           : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/">
-            <img className='h-24 w-36' src={logo} alt="Entomology Conference Logo" />
+            <img className='h-28 w-36' src={logo} alt="Entomology Conference Logo" />
           </Link>
 
           {/* Logo */}
@@ -117,9 +117,6 @@ export default function Navbar() {
                       }`
                     }
                   >
-{/* service_j4o4uz4 */}
-{/* jXhkJkY-TGgrNK1X_ */}
-{/* __ejs-test-mail-service__ */}
 
                     
                     {link.label}

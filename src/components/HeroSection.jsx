@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
+
 /* Floating insect emoji decoration */
 function FloatingInsect({ emoji, className, delay = 0 }) {
   return (

@@ -58,7 +58,7 @@ function CallForPapers() {
             <span className="section-badge">📄 Call for Papers</span>
             <h2 className="section-title mt-2 mb-5">
               Submit Your Research to{' '}
-              <span className="text-forest-900 italic">ICISZ 2026</span>
+              <span className="text-forest-900 italic">Entomology</span>
             </h2>
             <p className="text-gray-600 font-sans leading-relaxed mb-5">
               We invite original, unpublished research contributions in all areas of entomology and insect science.

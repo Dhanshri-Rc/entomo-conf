@@ -123,7 +123,7 @@ Comments: ${form.comments}
               </h2>
               <p className="text-gray-600 font-sans leading-relaxed mb-6">
                 Thank you, <strong>{form.firstName}</strong>! Your registration
-                for ICISZ 2026 has been submitted successfully. You will receive
+                for Entomology has been submitted successfully. You will receive
                 a confirmation email at <strong>{form.email}</strong> within 24
                 hours.
               </p>
@@ -437,7 +437,7 @@ Comments: ${form.comments}
                     </button>
 
                     <p className="text-xs text-gray-400 font-sans text-center">
-                      By registering you agree to the ICISZ 2026 Terms &amp;
+                      By registering you agree to the Entomology Terms &amp;
                       Conditions. Payment details will be sent via email.
                     </p>
                   </form>

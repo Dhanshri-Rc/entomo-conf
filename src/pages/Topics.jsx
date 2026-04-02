@@ -11,7 +11,7 @@ export default function Topics() {
         emoji="🔬"
         badge="Research Tracks"
         title="Conference Topics"
-        subtitle="ICISZ 2026 covers the full breadth of modern entomology across eight thematic tracks, from molecular genomics to conservation policy."
+        subtitle="Entomology covers the full breadth of modern entomology across eight thematic tracks, from molecular genomics to conservation policy."
       />
 
       {/* Topics grid */}

@@ -78,12 +78,12 @@ export default function Contact() {
   const labelClass = 'block text-xs font-semibold font-mono uppercase tracking-wider text-gray-600 mb-1.5'
 
   const contacts = [
-    { icon: '✉️', label: 'General Enquiries',    value: 'info@icisz2026.org',       sub: 'Response within 48 hours' },
-    { icon: '📝', label: 'Abstract Submissions',  value: 'papers@icisz2026.org',     sub: 'For all submission queries' },
-    { icon: '💳', label: 'Registration Support',  value: 'register@icisz2026.org',   sub: 'Fees, invoices & receipts' },
-    { icon: '🏨', label: 'Accommodation',         value: 'travel@icisz2026.org',     sub: 'Hotels & travel assistance' },
-    // { icon: '🤝', label: 'Sponsorship',           value: 'sponsors@icisz2026.org',   sub: 'Partnership opportunities' },
-    // { icon: '📸', label: 'Media & Press',         value: 'press@icisz2026.org',      sub: 'Accreditation & interviews' },
+    { icon: '✉️', label: 'General Enquiries',    value: 'info@entomology.org',       sub: 'Response within 48 hours' },
+    { icon: '📝', label: 'Abstract Submissions',  value: 'papers@entomology.org',     sub: 'For all submission queries' },
+    { icon: '💳', label: 'Registration Support',  value: 'register@entomology.org',   sub: 'Fees, invoices & receipts' },
+    { icon: '🏨', label: 'Accommodation',         value: 'travel@entomology.org',     sub: 'Hotels & travel assistance' },
+    // { icon: '🤝', label: 'Sponsorship',           value: 'sponsors@entomology.org',   sub: 'Partnership opportunities' },
+    // { icon: '📸', label: 'Media & Press',         value: 'press@entomology.org',      sub: 'Accreditation & interviews' },
   ]
 
   return (

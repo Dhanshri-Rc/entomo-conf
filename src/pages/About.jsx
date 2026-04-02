@@ -31,7 +31,7 @@ export default function About() {
       <PageBanner
         emoji="🏛️"
         badge="About the Conference"
-        title="About ICISZ 2026"
+        title="About Entomology"
         subtitle="Discover the mission, history and organising committee behind the world's premier entomology gathering."
       />
 
@@ -43,7 +43,7 @@ export default function About() {
               <span className="section-badge">🎯 Our Mission</span>
               <h2 className="section-title mt-2 mb-5">Why Entomology Matters Now</h2>
               <p className="text-gray-600 font-sans leading-relaxed mb-4">
-                Insects constitute more than half of all described species on Earth, yet they remain among the least understood and most threatened groups of organisms. ICISZ 2026 brings together the brightest minds in entomology to address the most pressing questions facing insect science today.
+                Insects constitute more than half of all described species on Earth, yet they remain among the least understood and most threatened groups of organisms. Entomology brings together the brightest minds in entomology to address the most pressing questions facing insect science today.
               </p>
               <p className="text-gray-600 font-sans leading-relaxed mb-6">
                 From pollinator collapse to disease-vector control, from biodiversity loss to the biotechnological potential of insects, our conference provides a rigorous, collegial forum for cutting-edge science with real-world impact.
@@ -123,7 +123,7 @@ export default function About() {
           <SectionReveal>
             <div className="text-center mb-12">
               <span className="section-badge">👥 Organising Committee</span>
-              <h2 className="section-title mt-2">The Team Behind ICISZ 2026</h2>
+              <h2 className="section-title mt-2">The Team Behind Entomology</h2>
             </div>
           </SectionReveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

@@ -113,7 +113,7 @@ export default function Schedule() {
       </section>
 
       {/* Legend */}
-      <section className="py-12 bg-gray-50 border-t border-gray-100">
+      {/* <section className="py-12 bg-gray-50 border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionReveal>
             <h3 className="font-serif font-bold text-gray-700 text-sm mb-4">Session Type Legend</h3>
@@ -135,7 +135,7 @@ export default function Schedule() {
             </div>
           </SectionReveal>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
