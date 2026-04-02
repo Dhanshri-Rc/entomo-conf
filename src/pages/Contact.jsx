@@ -1,32 +1,32 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import SectionReveal from '../components/SectionReveal'
-import { PageBanner } from './About'
-import emailjs from "emailjs-com"
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import SectionReveal from "../components/SectionReveal";
+import { PageBanner } from "./About";
+import emailjs from "emailjs-com";
 
-const initialForm = { name: '', email: '', subject: '', message: '' }
+const initialForm = { name: "", email: "", subject: "", message: "" };
 
 export default function Contact() {
-  const [form, setForm]       = useState(initialForm)
-  const [errors, setErrors]   = useState({})
-  const [sent, setSent]       = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [form, setForm] = useState(initialForm);
+  const [errors, setErrors] = useState({});
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = e => {
-    const { name, value } = e.target
-    setForm(prev => ({ ...prev, [name]: value }))
-    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }))
-  }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
 
   const validate = () => {
-    const errs = {}
-    if (!form.name.trim())    errs.name    = 'Name is required'
-    if (!form.email.trim())   errs.email   = 'Email is required'
-    else if (!/\S+@\S+\.\S+/.test(form.email)) errs.email = 'Invalid email'
-    if (!form.subject.trim()) errs.subject = 'Subject is required'
-    if (!form.message.trim()) errs.message = 'Message is required'
-    return errs
-  }
+    const errs = {};
+    if (!form.name.trim()) errs.name = "Name is required";
+    if (!form.email.trim()) errs.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(form.email)) errs.email = "Invalid email";
+    if (!form.subject.trim()) errs.subject = "Subject is required";
+    if (!form.message.trim()) errs.message = "Message is required";
+    return errs;
+  };
 
   // const handleSubmit = e => {
   //   e.preventDefault()
@@ -36,55 +36,77 @@ export default function Contact() {
   // }
 
   const handleSubmit = (e) => {
-  e.preventDefault()
+    e.preventDefault();
 
-  const errs = validate()
-  if (Object.keys(errs).length) {
-    setErrors(errs)
-    return
-  }
+    const errs = validate();
+    if (Object.keys(errs).length) {
+      setErrors(errs);
+      return;
+    }
 
-  setLoading(true)
+    setLoading(true);
 
-  emailjs.send(
-    "service_j4o4uz4",      // ✅ your service ID
-    "template_7trishb",     // ✅ your template ID
-    {
-      user_name: form.name,
-      user_email: form.email,
-      subject: form.subject,
-      message: form.message,
-    },
-    "ThEDZZoojJ7WX2TH0"     // ✅ your PUBLIC KEY
-  )
-  .then(() => {
-    setSent(true)
-    setForm(initialForm)
-  })
-  .catch((error) => {
-    console.error(error)
-    alert("Failed to send message ❌")
-  })
-  .finally(() => {
-    setLoading(false)
-  })
-}
+    emailjs
+      .send(
+        "service_j4o4uz4", // ✅ your service ID
+        "template_7trishb", // ✅ your template ID
+        {
+          user_name: form.name,
+          user_email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        "ThEDZZoojJ7WX2TH0", // ✅ your PUBLIC KEY
+      )
+      .then(() => {
+        setSent(true);
+        setForm(initialForm);
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Failed to send message ❌");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
 
-  const inputClass = name =>
+  const inputClass = (name) =>
     `w-full px-4 py-3 rounded-xl border font-sans text-sm bg-white text-gray-800 transition-all outline-none
      focus:ring-2 focus:ring-forest-900/20 focus:border-forest-900
-     ${errors[name] ? 'border-red-400 bg-red-50' : 'border-gray-200 hover:border-gray-300'}`
+     ${errors[name] ? "border-red-400 bg-red-50" : "border-gray-200 hover:border-gray-300"}`;
 
-  const labelClass = 'block text-xs font-semibold font-mono uppercase tracking-wider text-gray-600 mb-1.5'
+  const labelClass =
+    "block text-xs font-semibold font-mono uppercase tracking-wider text-gray-600 mb-1.5";
 
   const contacts = [
-    { icon: '✉️', label: 'General Enquiries',    value: 'info@entomology.org',       sub: 'Response within 48 hours' },
-    { icon: '📝', label: 'Abstract Submissions',  value: 'papers@entomology.org',     sub: 'For all submission queries' },
-    { icon: '💳', label: 'Registration Support',  value: 'register@entomology.org',   sub: 'Fees, invoices & receipts' },
-    { icon: '🏨', label: 'Accommodation',         value: 'travel@entomology.org',     sub: 'Hotels & travel assistance' },
+    {
+      icon: "✉️",
+      label: "General Enquiries",
+      value: "info@entomology.org",
+      sub: "Response within 48 hours",
+    },
+    {
+      icon: "📝",
+      label: "Abstract Submissions",
+      value: "papers@entomology.org",
+      sub: "For all submission queries",
+    },
+    {
+      icon: "💳",
+      label: "Registration Support",
+      value: "register@entomology.org",
+      sub: "Fees, invoices & receipts",
+    },
+    {
+      icon: "🏨",
+      label: "Accommodation",
+      value: "travel@entomology.org",
+      sub: "Hotels & travel assistance",
+    },
     // { icon: '🤝', label: 'Sponsorship',           value: 'sponsors@entomology.org',   sub: 'Partnership opportunities' },
     // { icon: '📸', label: 'Media & Press',         value: 'press@entomology.org',      sub: 'Accreditation & interviews' },
-  ]
+  ];
 
   return (
     <>
@@ -98,19 +120,32 @@ export default function Contact() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-12">
-
             {/* Contact info sidebar */}
             <div className="lg:col-span-2 space-y-10">
               <SectionReveal>
-                <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">Dedicated Contacts</h2>
+                <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">
+                  Dedicated Contacts
+                </h2>
                 <div className="grid gap-4">
                   {contacts.map((c, i) => (
-                    <div key={c.label} className="flex items-start gap-3 p-4 bg-forest-50 rounded-xl border border-forest-100 hover:bg-forest-100 transition-colors">
+                    <div
+                      key={c.label}
+                      className="flex items-start gap-3 p-4 bg-forest-50 rounded-xl border border-forest-100 hover:bg-forest-100 transition-colors"
+                    >
                       <span className="text-xl mt-0.5">{c.icon}</span>
                       <div className="min-w-0">
-                        <p className="text-xs font-mono uppercase tracking-wider text-gray-500">{c.label}</p>
-                        <a href={`mailto:${c.value}`} className="text-forest-900 font-semibold text-sm hover:underline break-all">{c.value}</a>
-                        <p className="text-xs text-gray-400 font-sans mt-0.5">{c.sub}</p>
+                        <p className="text-xs font-mono uppercase tracking-wider text-gray-500">
+                          {c.label}
+                        </p>
+                        <a
+                          href={`mailto:${c.value}`}
+                          className="text-forest-900 font-semibold text-sm hover:underline break-all"
+                        >
+                          {c.value}
+                        </a>
+                        <p className="text-xs text-gray-400 font-sans mt-0.5">
+                          {c.sub}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -139,7 +174,9 @@ export default function Contact() {
             {/* Contact form */}
             <div className="lg:col-span-3">
               <SectionReveal delay={0.1}>
-                <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+                <h2 className="font-serif text-2xl font-bold text-gray-900 mb-6">
+                  Send Us a Message
+                </h2>
 
                 <AnimatePresence mode="wait">
                   {sent ? (
@@ -150,11 +187,20 @@ export default function Contact() {
                       className="bg-forest-50 border border-forest-200 rounded-2xl p-10 text-center"
                     >
                       <div className="text-5xl mb-4">📨</div>
-                      <h3 className="font-serif text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
+                      <h3 className="font-serif text-2xl font-bold text-gray-900 mb-2">
+                        Message Sent!
+                      </h3>
                       <p className="text-gray-600 font-sans text-sm mb-6">
-                        Thank you, <strong>{form.name}</strong>. We'll reply to <strong>{form.email}</strong> within 48 hours.
+                        Thank you, <strong>{form.name}</strong>. We'll reply to{" "}
+                        <strong>{form.email}</strong> within 48 hours.
                       </p>
-                      <button onClick={() => { setSent(false); setForm(initialForm) }} className="btn-outline">
+                      <button
+                        onClick={() => {
+                          setSent(false);
+                          setForm(initialForm);
+                        }}
+                        className="btn-outline"
+                      >
                         Send Another Message
                       </button>
                     </motion.div>
@@ -170,50 +216,96 @@ export default function Contact() {
                       <div className="grid sm:grid-cols-2 gap-5">
                         <div>
                           <label className={labelClass}>Your Name *</label>
-                          <input name="name" type="text" value={form.name} onChange={handleChange}
-                            placeholder="Full name" className={inputClass('name')} />
-                          {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                          <input
+                            name="name"
+                            type="text"
+                            value={form.name}
+                            onChange={handleChange}
+                            placeholder="Full name"
+                            className={inputClass("name")}
+                          />
+                          {errors.name && (
+                            <p className="text-red-500 text-xs mt-1">
+                              {errors.name}
+                            </p>
+                          )}
                         </div>
                         <div>
                           <label className={labelClass}>Email Address *</label>
-                          <input name="email" type="email" value={form.email} onChange={handleChange}
-                            placeholder="your@email.com" className={inputClass('email')} />
-                          {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                          <input
+                            name="email"
+                            type="email"
+                            value={form.email}
+                            onChange={handleChange}
+                            placeholder="your@email.com"
+                            className={inputClass("email")}
+                          />
+                          {errors.email && (
+                            <p className="text-red-500 text-xs mt-1">
+                              {errors.email}
+                            </p>
+                          )}
                         </div>
                       </div>
 
                       <div>
                         <label className={labelClass}>Subject *</label>
-                        <select name="subject" value={form.subject} onChange={handleChange} className={inputClass('subject')}>
+                        <select
+                          name="subject"
+                          value={form.subject}
+                          onChange={handleChange}
+                          className={inputClass("subject")}
+                        >
                           <option value="">Select a subject…</option>
-                          <option value="registration">Registration Enquiry</option>
-                          <option value="abstract">Abstract / Paper Submission</option>
-                          <option value="accommodation">Accommodation & Travel</option>
-                          <option value="sponsorship">Sponsorship & Exhibition</option>
+                          <option value="registration">
+                            Registration Enquiry
+                          </option>
+                          <option value="abstract">
+                            Abstract / Paper Submission
+                          </option>
+                          <option value="accommodation">
+                            Accommodation & Travel
+                          </option>
+                          <option value="sponsorship">
+                            Sponsorship & Exhibition
+                          </option>
                           <option value="visa">Visa Support Letter</option>
                           <option value="other">Other</option>
                         </select>
-                        {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject}</p>}
+                        {errors.subject && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.subject}
+                          </p>
+                        )}
                       </div>
 
                       <div>
                         <label className={labelClass}>Message *</label>
-                        <textarea name="message" value={form.message} onChange={handleChange} rows={6}
+                        <textarea
+                          name="message"
+                          value={form.message}
+                          onChange={handleChange}
+                          rows={6}
                           placeholder="Write your message here…"
-                          className={`${inputClass('message')} resize-none`} />
-                        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+                          className={`${inputClass("message")} resize-none`}
+                        />
+                        {errors.message && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.message}
+                          </p>
+                        )}
                       </div>
 
                       {/* <button type="submit" className="btn-primary w-full justify-center py-4">
                         Send Message →
                       </button> */}
                       <button
-  type="submit"
-  disabled={loading}
-  className="btn-primary w-full justify-center py-4 flex items-center gap-2"
->
-  {loading ? "Sending..." : "Send Message →"}
-</button>
+                        type="submit"
+                        disabled={loading}
+                        className="btn-primary w-full justify-center py-4 flex items-center gap-2"
+                      >
+                        {loading ? "Sending..." : "Send Message →"}
+                      </button>
                     </motion.form>
                   )}
                 </AnimatePresence>
@@ -234,15 +326,31 @@ export default function Contact() {
           </SectionReveal>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { icon: '✈️', title: 'By Air', desc: 'Vienna International Airport (VIE) connects to 190+ cities. Direct rail link to city centre in 16 minutes.' },
-              { icon: '🚆', title: 'By Rail', desc: 'Vienna Hauptbahnhof links all major European cities. Conference centre is 10 min by metro (U1 line).' },
-              { icon: '🏨', title: 'Accommodation', desc: 'We have negotiated rates at 5 partner hotels within 1km of the venue. Book via our travel portal.' },
+              {
+                icon: "✈️",
+                title: "By Air",
+                desc: "Vienna International Airport (VIE) connects to 190+ cities. Direct rail link to city centre in 16 minutes.",
+              },
+              {
+                icon: "🚆",
+                title: "By Rail",
+                desc: "Vienna Hauptbahnhof links all major European cities. Conference centre is 10 min by metro (U1 line).",
+              },
+              {
+                icon: "🏨",
+                title: "Accommodation",
+                desc: "We have negotiated rates at 5 partner hotels within 1km of the venue. Book via our travel portal.",
+              },
             ].map((item, i) => (
               <SectionReveal key={item.title} delay={i * 0.1}>
                 <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm card-hover text-center">
                   <div className="text-3xl mb-3">{item.icon}</div>
-                  <h3 className="font-serif font-bold text-gray-900 text-lg mb-2">{item.title}</h3>
-                  <p className="text-gray-600 text-sm font-sans leading-relaxed">{item.desc}</p>
+                  <h3 className="font-serif font-bold text-gray-900 text-lg mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm font-sans leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
               </SectionReveal>
             ))}
@@ -250,10 +358,8 @@ export default function Contact() {
         </div>
       </section>
     </>
-  )
+  );
 }
-
-
 
 // import React, { useState } from 'react'
 // import { motion, AnimatePresence } from 'framer-motion'
